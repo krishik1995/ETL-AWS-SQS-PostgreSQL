@@ -46,7 +46,12 @@ The project employs an AES encryption strategy to mask Personally Identifiable I
    ```
    *Note* The application waits for the containers to be built. Application run starts after 10 - 20 seconds after the containers have been built to ensure proper integration. 
 7. Once the application is running, you can monitor the `etl_logs.log` file for detailed logs of the ETL process.
-8. To shut down the application and the associated services, run
+8. To test if the messages are loaded successfully. Execute the below command to check contents of the user_logins table:
+   ```bash
+   docker-compose exec postgres psql -U postgres -d postgres -c "\x on"
+   docker-compose exec postgres psql -U postgres -d postgres -c "SELECT * FROM user_logins;"
+   ```
+10. To shut down the application and the associated services, run
    ``` bash
    docker-compose down
    ``` 
@@ -56,7 +61,7 @@ Ensure to replace placeholders like `<repository_url>` with the specific details
 
 ## Production Deployment strategy 
 
-To deploy this Dockerized application in production, I would use a Kubernetes cluster. Kubernetes can manage, scale, and deploy Docker containers. A CI/CD pipeline would be established for automatic testing, building, and deployment of changes to the application. Deploying using Kubernetes will also allow easy scaling of the application based on load.
+To deploy this Dockerized application in production, we can use a Kubernetes cluster. Kubernetes can manage, scale, and deploy Docker containers. A CI/CD pipeline would be established for automatic testing, building, and deployment of changes to the application. Deploying using Kubernetes will also allow easy scaling of the application based on load.
 
 ## Additional components to consider for production
 
