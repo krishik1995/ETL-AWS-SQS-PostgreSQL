@@ -1,4 +1,4 @@
-# ETL-AWS-SQS-PostgreSQL
+# ETL pipeline for processing SQS messages 
 
 # Project Overview
 
