@@ -46,7 +46,7 @@ The project employs an AES encryption strategy to mask Personally Identifiable I
    ```
    *Note* The application waits for the containers to be built. Application run starts after 10 - 20 seconds after the containers have been built to ensure proper integration. 
 7. Once the application is running, you can monitor the `etl_logs.log` file for detailed logs of the ETL process.
-8. To test if the messages are loaded successfully. Execute the below command to check contents of the user_logins table:
+8. To test if the messages are loaded successfully. Open another terminal. Execute the below command to check contents of the user_logins table:
    ```bash
    docker-compose exec postgres psql -U postgres -d postgres -c "\x on"
    docker-compose exec postgres psql -U postgres -d postgres -c "SELECT * FROM user_logins;"
