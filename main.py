@@ -18,7 +18,7 @@ with open('pwd.json', 'r') as file:
 
 # Setting maximum retires and return delay for check_sqs_service 
 maximum_tries = 5
-retry_delay=10
+retry_delay=15
 
 def check_sqs_service(queue_url, max_retries=maximum_tries, retry_delay=retry_delay):
     """Check if SQS service is up and the queue is visible. Retries for a set number of times if there's an exception."""
