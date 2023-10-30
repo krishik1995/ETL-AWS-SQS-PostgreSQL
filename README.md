@@ -84,8 +84,8 @@ We could consider adding the following components to make sure that our applicat
 Since the PII is masked using AES encryption strategy, it can be recovered using the decryption method (Included in encryption_utils.py) provided the correct encryption key is available. Always store encryption keys securely and separate them from the data in a Kubernetes secret or an AWS Key Management Service.
 
 ## Assumptions
-- **Message Structure**: The Data Validity checks are built on the assumption that the SQS Queue contains JSON data with a consistent structure, containing fields like user_id, 
-                          device_type, ip, device_id, locale, app_version, and create_date.
+- **Message Structure**: The Data Validity checks are built on the assumption that only valid messages from SQS Queue, containing fields like user_id, 
+                          device_type, ip, device_id, locale, app_version, and create_date are to be loaded into the Postgres database.
 - **PostgreSQL database** - The database is set up with the correct table schema to store the processed records                         
   
 - **App Version**: Assumed that app version is required to be converted to integer for downstream process. **Suggestion** Decompose the app version into separate INTEGER columns, e.g., 
