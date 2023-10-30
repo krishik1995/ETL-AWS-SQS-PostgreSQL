@@ -39,17 +39,19 @@ The project employs an AES encryption strategy to mask Personally Identifiable I
    ```
 3. Ensure you have Docker and Docker-Compose installed on your machine.
 4. Navigate to the project directory where the `docker-compose.yml` file is located.
-5. Run ```docker-compose up --build``` in the terminal to build the Docker images and start the multi-container application. This will start Localstack, PostgreSQL, and the main 
+5. Run the following command in the terminal to build the Docker images and start the multi-container application. This will start Localstack, PostgreSQL, and the main 
    application.
+   ``` bash
+        docker-compose up --build
+   ``` 
 7. Once the application is running, you can monitor the `etl_logs.log` file for detailed logs of the ETL process.
-8. To shut down the application and the associated services, run `docker-compose down`.
+8. To shut down the application and the associated services, run
+   ``` bash
+        docker-compose down
+   ``` 
 
 Ensure to replace placeholders like `<repository_url>` with the specific details relevant to your repository.
-
    
-
----
-
 
 ## Production Deployment strategy 
 
@@ -85,5 +87,5 @@ Since the PII is masked using AES encryption strategy, it can be recovered using
                    varchar for simple storage allowing more flexibility for the data analysts/scientists to perform their transformations in the later stages.
 - **Data Source**: Assumed that the main source of data is the AWS SQS service simulated by Localstack in a Docker environment.
 - **Data Volume**: Assumed that data volume is moderate and doesn't require immediate parallel processing or streaming solutions.
-- **Environment Variables**: Assumed that necessary environment variables are provided through Docker and Docker-Compose configurations.
-- **AES Encryption**: Assumed that AES encryption is used specifically for IP and device ID masking.
+
+
