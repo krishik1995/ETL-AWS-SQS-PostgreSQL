@@ -42,12 +42,13 @@ The project employs an AES encryption strategy to mask Personally Identifiable I
 5. Run the following command in the terminal to build the Docker images and start the multi-container application. This will start Localstack, PostgreSQL, and the main 
    application.
    ``` bash
-        docker-compose up --build
-   ``` 
+   docker-compose up --build
+   ```
+   *Note* The application waits for the containers to be built. Application run starts after 10 - 20 seconds after the containers have been built to ensure proper integration. 
 7. Once the application is running, you can monitor the `etl_logs.log` file for detailed logs of the ETL process.
 8. To shut down the application and the associated services, run
    ``` bash
-        docker-compose down
+   docker-compose down
    ``` 
 
 Ensure to replace placeholders like `<repository_url>` with the specific details relevant to your repository.
