@@ -34,12 +34,19 @@ The project employs an AES encryption strategy to mask Personally Identifiable I
 ## How to run this Dockerized application:
 
 1. Clone the repository from GitHub.
-2. Ensure you have Docker and Docker-Compose installed on your machine.
-3. Navigate to the project directory where the `docker-compose.yml` file is located.
-4. Run `docker-compose build` to build the Docker images.
-5. Run `docker-compose up` to start the multi-container application. This will start Localstack, PostgreSQL, and the main application.
-6. Once the application is running, you can monitor the `etl_logs.log` file for detailed logs of the ETL process.
-7. To shut down the application and the associated services, run `docker-compose down`.
+   ```bash
+   git clone <repository_url>
+   ```
+3. Ensure you have Docker and Docker-Compose installed on your machine.
+4. Navigate to the project directory where the `docker-compose.yml` file is located.
+5. Run ```docker-compose up --build``` in the terminal to build the Docker images and start the multi-container application. This will start Localstack, PostgreSQL, and the main 
+   application.
+7. Once the application is running, you can monitor the `etl_logs.log` file for detailed logs of the ETL process.
+8. To shut down the application and the associated services, run `docker-compose down`.
+
+Ensure to replace placeholders like `<repository_url>` with the specific details relevant to your repository.
+
+   
 
 ---
 
@@ -50,7 +57,7 @@ To deploy this Dockerized application in production, I would use a Kubernetes cl
 
 ## Additional components to consider for production
 
-- **Scheduling**: Utilize tools like Airflow to efficiently automate scheduling and sclaing this application.
+- **Scheduling**: Utilize tools like Airflow to efficiently automate scheduling and scaling this application.
 - **Error Handling & Recovery**: Improve robustness by adding error handling and recovery mechanisms.
 - **Monitoring & Logging**: Integrate with platforms like Prometheus for monitoring and ELK Stack for logging within the Docker containers.
 - **Security**: Implement strict IAM roles, security groups, and data encryption both at rest and in transit. Additionally, secure Docker container communication.
