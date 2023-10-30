@@ -33,9 +33,9 @@ The project employs an AES encryption strategy to mask Personally Identifiable I
 
 ## How to run this Dockerized application:
 
-1. Clone the repository from GitHub.
+1. Clone the repository from GitHub or download the repository as a zip file.
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/krishik1995/ETL-AWS-SQS-PostgreSQL.git
    ```
 3. Ensure you have Docker and Docker-Compose installed on your machine.
 4. Navigate to the project directory where the `docker-compose.yml` file is located.
