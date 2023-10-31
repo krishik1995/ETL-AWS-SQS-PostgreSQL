@@ -64,23 +64,23 @@ Ensure to replace placeholders like `<repository_url>` with the specific details
 
 ## Production Deployment strategy 
 
-To deploy this Dockerized application in production, we can use a Kubernetes cluster. Kubernetes can manage, scale, and deploy Docker containers. A CI/CD pipeline would be established for automatic testing, building, and deployment of changes to the application. Deploying using Kubernetes will also allow easy scaling of the application based on load.
+We can use a Kubernetes cluster to deploy this Dockerized application in a production environment. Docker containers can be scaled, deployed, and managed by Kubernetes. The automatic testing, building, and deployment of application updates would be handled by a CI/CD pipeline. Using Kubernetes for deployment will also make it simple to scale the application according to load.
 
 ## Additional components to consider for production
 
-- **Scheduling**: Utilize tools like Airflow to efficiently automate scheduling and scaling this application.
-- **Error Handling & Recovery**: Improve robustness by adding error handling and recovery mechanisms.
-- **Monitoring & Logging**: Integrate with platforms like Prometheus for monitoring and ELK Stack for logging within the Docker containers.
-- **Security**: Implement strict IAM roles, security groups, and data encryption both at rest and in transit. Additionally, secure Docker container communication.
-- **Automated Testing**: Implement unit tests, integration tests, and end-to-end tests in the Docker environment to ensure code quality and functionality.
-- **Backup & Recovery**: Automated backup solutions for the PostgreSQL database container and a disaster recovery plan.
+- **Scheduling**: To effectively automate scheduling and scale this application, we can make use of tools such as Airflow.
+- **Error Handling & Recovery**: By including error handling and recovery techniques, robustness can be increased.
+- **Monitoring & Logging**: Connect to systems such as ELK Stack for Docker container logging and Prometheus for monitoring.
+- **Security**: Encrypt data while it's in transit and at rest, and use stringent IAM roles and security groups. Furthermore, communication between Docker containers is secure.
+- **Automated Testing**: To guarantee the functionality and quality of the code, run end-to-end, integration, and unit tests in the Docker environment.
+- **Backup & Recovery**: A disaster recovery plan and automated backup solutions for the PostgreSQL database container.
 
 ## Scalability
 We could consider adding the following components to make sure that our application is scalable.
 - **Horizontal Scaling**: Kubernetes can help scale out by adding more application replicas as the dataset grows.
-- **Database Optimization**: Implement sharding, partitioning, and indexing in PostgreSQL to accommodate a larger dataset.
-- **Load Balancers**: Deploy a load balancer to distribute incoming data to multiple application instances.
-- **Auto-Scaling**: Use Kubernetes auto-scaling based on CPU or memory usage to handle varying loads.
+- **Database Optimization**: To handle a larger dataset, use PostgreSQL's sharding, partitioning, and indexing features..
+- **Load Balancers**: We can Deploy a load balancer to distribute incoming data to multiple application instances.
+- **Auto-Scaling**: We can use Kubernetes auto-scaling based on CPU or memory usage to handle varying loads.
 
 ## PII Recovering Strategy for Data Analysts/Scientists.
 
