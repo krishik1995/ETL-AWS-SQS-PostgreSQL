@@ -7,6 +7,7 @@ This project involves a Dockerized pipeline for fetching data from AWS SQS, then
 
 
 The application runs using the ETL (Extract, Transform, Load) strategy. Messages are seamlessly read from the queue using the AWS SDK, specifically the `boto3` library, which offers direct and efficient interactions with Amazon SQS. This ensures efficient polling and batch processing to optimize throughput. As privacy is paramount, PII data, specifically IP addresses and device IDs, are masked using AES encryption, ensuring that not only is the information secure, but duplicates can also be readily identified by comparing the encrypted values. The application establishes a steadfast connection to Postgres using the psycopg2 library, providing a seamless experience for writing and querying the database. With the power of Docker, the application is encapsulated within a container, ensuring consistent runtime environments and smooth deployment. The Docker setup, as outlined in the `docker-compose.yml`, combines services like LocalStack and Postgres, allowing the application to run in an interconnected environment while ensuring modular separation of concerns.
+
 **Note**: During the transformation phase, only messages with a valid structure are processed. The application harnesses the capability of the Dead Letter Queue in AWS SQS to automatically redirect messages that are not processed successfully, thus allowing for a later inspection
 
 
