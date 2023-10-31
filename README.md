@@ -72,7 +72,7 @@ We can use a Kubernetes cluster to deploy this Dockerized application in a produ
 - **Error Handling & Recovery**: By including error handling and recovery techniques, robustness can be increased.
 - **Monitoring & Logging**: We can connect to systems such as ELK Stack for Docker container logging and Prometheus for monitoring.
 - **Security**: Encrypt data while it's in transit and at rest, and use stringent IAM roles and security groups. Furthermore, communication between Docker containers is secure.
-- **Automated Testing**: To guarantee the functionality and quality of the code, run end-to-end, integration, and unit tests in the Docker environment.
+- **Automated Testing**: Develop end-to-end, integration, and unit tests to increase application quality and robustness.
 - **Backup & Recovery**: A disaster recovery plan and automated backup solutions for the PostgreSQL database container.
 
 ## Scalability
