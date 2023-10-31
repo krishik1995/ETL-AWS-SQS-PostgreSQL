@@ -89,12 +89,13 @@ Since the PII is masked using AES encryption strategy, it can be recovered using
 ## Assumptions
 - **Message Structure**: The Data Validity checks are built on the assumption that only valid messages from SQS Queue, containing fields like user_id, 
                           device_type, ip, device_id, locale, app_version, and create_date are to be loaded into the Postgres database.
+
 - **PostgreSQL database** - The database is set up with the correct table schema to store the processed records                         
   
 - **App Version**: The App Version has to be stored in Integer format for downstream consumers. **Suggestion** Decompose the app version into separate INTEGER columns, e.g., 
                    2.3.9 can be decomposed to major_version, minor_version, and patch_version to capture complete information. Additionally, we could consider converting it into 
                    varchar for simple storage allowing more flexibility for the data analysts/scientists to perform their transformations in the later stages.
-- **Data Source**: Assumed that the main source of data is the AWS SQS service simulated by Localstack in a Docker environment.
+  
 - **Data Volume**: Assumed that data volume is moderate and doesn't require immediate parallel processing or streaming solutions.
 
 
