@@ -59,7 +59,7 @@ The project employs an AES encryption strategy to mask Personally Identifiable I
    docker-compose down
    ``` 
 
-Ensure to replace placeholders like `<repository_url>` with the specific details relevant to your repository.
+
    
 
 ## Production Deployment strategy 
