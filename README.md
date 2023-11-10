@@ -69,17 +69,19 @@ We can use a Kubernetes cluster to deploy this Dockerized application in a produ
 ## Additional components to consider for production
 
 - **Scheduling**: To effectively automate scheduling and scale this application, we can make use of tools such as Airflow.
-- **Error Handling & Recovery**: By including error handling and recovery techniques, robustness can be increased.
-- **Monitoring & Logging**: We can connect to systems such as ELK Stack for Docker container logging and Prometheus for monitoring.
-- **Security**: Encrypt data while it's in transit and at rest, and use stringent IAM roles and security groups. Furthermore, communication between Docker containers is secure.
 - **Automated Testing**: Develop end-to-end, integration, and unit tests to increase application quality and robustness.
+- **Tokenizer**: Implement tokenization to enhance data security and privacy while maintaining performance and preserving format after tokenization.
+- **Monitoring & Logging**: We can connect to systems such as ELK Stack for Docker container logging and Prometheus for monitoring.
+- **Error Handling**: By including error handling - Data Validation Checks, robustness can be increased.
+- **Security**: Encrypt data while it's in transit and at rest, and use stringent IAM roles and security groups. Furthermore, communication between Docker containers is secure.
 - **Backup & Recovery**: A disaster recovery plan and automated backup solutions for the PostgreSQL database container.
 
 ## Scalability
 We could consider adding the following components to make sure that our application is scalable.
 - **Horizontal Scaling**: Kubernetes can help scale out by adding more application replicas as the dataset grows.
-- **Database Optimization**: To handle a larger dataset, use PostgreSQL's sharding, partitioning, and indexing features..
-- **Load Balancers**: We can Deploy a load balancer to distribute incoming data to multiple application instances.
+- **Database Optimization**: To handle a larger dataset, use PostgreSQL's sharding, partitioning, and indexing features.
+- **Async Operations**: Implement asynchronous processing for tasks that can be performed independently and don't require immediate responses. This can improve overall application 
+                        throughput and responsiveness.
 - **Auto-Scaling**: We can use Kubernetes auto-scaling based on CPU or memory usage to handle varying loads.
 
 ## PII Recovering Strategy for Data Analysts/Scientists.
